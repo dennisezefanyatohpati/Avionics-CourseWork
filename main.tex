@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%                Packages              %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, a4paper, oneside]{article}
+
+\usepackage[margin=25mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage{setspace}
+\setlength{\parskip}{0.5mm}
+
+\usepackage{caption}
+\setlength{\belowcaptionskip}{-18pt}
+
+\usepackage{ragged2e}
+\usepackage{subcaption}
+
+\usepackage{graphicx}
+\graphicspath{ {./Figures/images/} }
+\usepackage{pdfpages}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{epigraph}
+\usepackage{mathtools}
+\usepackage{lipsum}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\usepackage{listliketab}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor= black,  %choose some color if you want links to stand out
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%              Start Document          %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%___COVER_________________________________________%
+\input{cover}
+
+%___PRE-CONTENT___________________________________%
+\pagenumbering{gobble}
+\clearpage
+
+%___TABLE OF CONTENT______________________________%
+\input{Content/content_table}
+\clearpage
+
+%___INTRODUCTION__________________________________%
+\pagenumbering{arabic}
+\input{Content/navigation}
+\input{Content/sensor_technology}
+
+
+%___Bibliography__________________________________%
+\newpage
+\printbibliography
+
+\end{document}
