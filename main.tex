@@ -3,6 +3,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper, oneside]{article}
 
+\usepackage[sorting=none]{biblatex}
+
 \usepackage[margin=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -13,7 +15,6 @@
 
 \usepackage{mwe}
 \usepackage{caption}
-%\setlength{\belowcaptionskip}{-18pt}
 
 \usepackage{ragged2e}
 \usepackage{subcaption}
@@ -38,7 +39,6 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=false, %set true if you want colored links
@@ -46,11 +46,12 @@
     linkcolor= black,  %choose some color if you want links to stand out
 }
 
+\onehalfspacing
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%              Start Document          %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
 
 %___COVER_________________________________________%
 \input{cover}
@@ -63,14 +64,18 @@
 \input{Content/content_table}
 \clearpage
 
-%___INTRODUCTION__________________________________%
+%___Content__________________________________%
 \pagenumbering{arabic}
 \input{Content/navigation}
 \input{Content/sensor_technology}
 
-
 %___Bibliography__________________________________%
 \newpage
+\renewcommand{\thepage}{}
 \printbibliography
+
+\begin{center}
+    \textbf{-The end of this paper- \\ Total page: 15}
+\end{center}
 
 \end{document}
