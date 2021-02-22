@@ -41,11 +41,12 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=false, %set true if you want colored links
+    colorlinks=false, %set true if you want coloured links
     linktoc=all,     %set to all if you want both sections and subsections linked
-    linkcolor= black,  %choose some color if you want links to stand out
+    linkcolor= black,  %choose some colour if you want links to stand out
 }
 
+\setstretch{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%              Start Document          %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,14 +69,7 @@
 \input{Content/sensor_technology}
 
 %___Bibliography__________________________________%
-\newpage
-\renewcommand{\thepage}{}
-\printbibliography
-
-\vspace{5cm}
-
-\begin{center}
-    \textbf{-The end of this paper- \\ Total page: 15}
-\end{center}
+\clearpage
+\input{Content/ref_page}
 
 \end{document}

@@ -1,10 +1,12 @@
+%SETTINGS
 \newpage
 \setcounter{page}{1}
 \justifying
 \noindent
 
+%WRITING
 \section{Navigation}
-The first section of this paper will discuss in regards to navigation. The focused topic will be the Inertial Navigation System (INS) and Enhanced Long Range Navigation system (E-LORAN). This section will include a brief introduction, system mechanism, and real-life application for each type of navigation.
+The first section of this paper will discuss in regards to navigation. The focused topic will be the Inertial Navigation System (INS) and Enhanced Long Range Navigation system (E-LORAN). This section will include a brief introduction, system mechanism, and real-life application for each type of navigation.\\
 
 \subsection{Inertial Navigation System (INS)}
 Inertia is the ability of any physical object to maintain its translational and rotational velocity unless external forces act upon them. Inertial navigation is self-contained navigation that is used to track body position, and orientation relative to its initial condition (point, orientation, and velocity) \cite{Woodman2007NumberNavigation}\cite{Ribbens2003AircraftInstruments}. This ability makes INS an autonomous system with no dependency on external information and does not radiate energy to space, allowing its application in sea, airspace, and underground \cite{2018MiniatureUnit}. Inertial Measurement Unit (IMU) is the core of INS which normally consist of three orthogonal gyroscopes, three orthogonal accelerometers, and three orthogonal magnetometers (common in modern IMU) which measure 9 degrees of freedom (DoF) movement \cite{Christ2014NavigationalSensors}. Figure \ref{fig:9DOFIMU} below shows both diagram of 6 DoF and 9 DoF IMUs.\\
@@ -26,35 +28,32 @@ Inertia is the ability of any physical object to maintain its translational and 
 \end{figure}
 
 
-\noindent INS's accuracy depends on the IMU grades, with strategic IMU Grade as the most accurate with a positional error of 30-100 m/h \cite{El-Sheimy2020InertialTrends}. Due to its accuracy, size, and external dependency, INS has been used in a broad navigation and guidance system. Below are some of the most common application of modern INS.
+\noindent INS's accuracy depends on the IMU grades, with strategic IMU Grade as the most accurate with a positional error of 30-100 m/h \cite{El-Sheimy2020InertialTrends}. Due to its accuracy, size, and external dependency, INS has been used in a broad navigation and guidance system. Below are some of the most common application of modern INS.\\
 
 \subsubsection{Aircraft Navigation}
-INS is exceptionally well known in a long-range aircraft navigation system. INS's basis in aircraft navigation is dead-reckoning, where initialisation of a point in space is required before its use. INS allows calculation of its position and velocity based on acceleration measurement over time \cite{El-Sheimy2020InertialTrends}\cite{Loewy2003AircraftAvionics}. The history of INS was first deployed solely for submarines and was too heavy for flying machines. With the rapid improvement of size and weight reduction, INS is widely used in modern aircraft.
-
+INS is exceptionally well known in a long-range aircraft navigation system. INS's basis in aircraft navigation is dead-reckoning, where initialisation of a point in space is required before its use. INS allows calculation of its position and velocity based on acceleration measurement over time \cite{El-Sheimy2020InertialTrends}\cite{Loewy2003AircraftAvionics}. The history of INS was first deployed solely for submarines and was too heavy for flying machines. With the rapid improvement of size and weight reduction, INS is widely used in modern aircraft.\\
 
 \begin{figure}[!ht]
-\centering
-\begin{minipage}{.48\textwidth}
-  \centering
-  \includegraphics[height=0.8\linewidth]{Figures/INS_Concorde.jpg}
-  \captionof{figure}{Physical INS System Used in Concorde}
-  \label{fig:concordeINS}
-\end{minipage}%
-\begin{minipage}{.6\textwidth}
-  \centering
-  \includegraphics[height=0.8\linewidth]{Figures/INS-IRS_InterfacePanel.png}
-  \captionof{figure}{Airbus INS Interface Panel Illustration}
-  \label{fig:InterfaceINS}
-\end{minipage}
+\begin{center}
+%    
+  \begin{subfigure}[b]{0.55\textwidth}
+    \includegraphics[height=6cm]{Figures/INS_Concorde.jpg}
+  \end{subfigure}
+%
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[height=6cm]{Figures/INS-IRS_InterfacePanel.png}
+  \end{subfigure}
+%  
+  \caption{Physical INS System Used in Concorde (left) and Airbus INS Interface Panel Illustration (right).}
+    \label{fig:concordeINS}
+\end{center}
 \end{figure}
 
-\vspace{5mm}
 \noindent INS was a giant leap in aircraft navigation. Around the 1960s to 1990s, navigation reliability was challenged for an international flight around a higher earth latitude \cite{Anonymous1964InertialNavigation}. The higher earth's latitude is the minimum region of compass accuracy and ground-based navigation aids (tower, etc.), making the navigation system unreliable. At this time, independent navigation was needed to overcome the challenge, and INS was the solution.\\
 
 \noindent Despite its accuracy and independence, INS build its error over its usage time. For instance, a tactical grade INS gain positional error up to 20 nautical miles per hour with gyroscope drift up to 10 deg per hour, which is not reliable for long-range navigation use. Therefore, in a modern navigation system, integrating another type of navigation system (such as GPS) is proven to aid these issues.\\
 
 \subsubsection{Submarine Navigation}
-
 Before the INS became small and light, INS was broadly used for the submarine navigation system known as Ship Inertial Navigation System (SINS) \cite{NATOSINS}. The same concept applies where INS uses acceleration measurement to calculate the submarines' latitude, longitude, heading, and altitude, given the initial referencing point.  One example of INS application in a submarine is U.S.S Alabama, where INS is integrated vis Central Navigation Computer (CNC) with TRANSIT, LORAN-C, and SONAR for its overall navigation purposes \cite{HowNavigation}. Figure \ref{fig:USS_INS} shows the illustration of the U.S.S Alabama navigation system..\\
 
 \noindent It is essential for a military submersible embeds an INS without any dependency on any other navigation aid. However, submarine design's objective is to travel in stealth mode where navigation which transmits waves such as GPS and sonar are not allowed \cite{Rogobete2018UsingPositioning}. For a long-range movement, the INS alone could build an error, and another navigation aid is required. To overcome this challenge, a Kalman filter with a Second Gradient of Gravity Field (SGG) sensor must allow continuous correction, which improves navigation accuracy and minimises INS drift. A simplified diagram of these schemes is shown in figure \ref{fig:INS_KALMAN}.\\
@@ -71,9 +70,7 @@ Before the INS became small and light, INS was broadly used for the submarine na
     \caption{INS Diagram correlated to Kalman filter with navigation aid and matching algorithm to improve drift correction \cite{Rogobete2018UsingPositioning}. }
     \label{fig:INS_KALMAN}
 \end{figure}
-
 \vspace{3cm}
-
 
 \subsection{Enhanced Long Range Navigation (E-LORAN)}
 
@@ -95,27 +92,26 @@ The continuous growth of the world's shipping industry is expected to be large, 
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.7]{Figures/ELORAN_maritime_app.PNG}
-    \caption{Integrated eLoran Service to Martime service provision \cite{InternationalLORANAssociation2007EnhancedApril}.}
+    \caption{Integrated eLoran Service to Maritime service provision \cite{InternationalLORANAssociation2007EnhancedApril}.}
     \label{fig:eloranmaritimeapp}
 \end{figure}
 
-\noindent For maritime application, a well-configured eLoran system can achieve 10 m with 95\% accuracy within 30-km field coverage, which follows the International Maritime Organisation (IMO) requirements for harbour and coastal operations, such as; harbour entrance/approach and coastal navigation \cite{SharedTutorial}\cite{Son2020ELoran:Areas}\cite{SafarAIONS}. Figure \ref{fig:elorancontour}  and \ref{fig:eloranblanked} shows eLoran accuracy contour, which suggests 10-m positioning accuracy around most of the UK's coastal water and blanked pulse of one of the UK's eLoran station (Anthron).\\
-
+\noindent For maritime application, a well-configured eLoran system can achieve 10 m with 95\% accuracy within 30-km field coverage, which follows the International Maritime Organisation (IMO) requirements for harbour and coastal operations, such as; harbour entrance/approach and coastal navigation \cite{SharedTutorial}\cite{Son2020ELoran:Areas}\cite{SafarAIONS}. Figure \ref{fig:eloranblanked} shows eLoran accuracy contour, which suggests 10-m positioning accuracy around most of the UK's coastal water and blanked pulse of one of the UK's eLoran station (Anthron).\\
 
 \begin{figure}[!ht]
-\centering
-\begin{minipage}{.45\textwidth}
-  \centering
-  \includegraphics[height=0.6\linewidth]{Figures/ELORAN_maritime_contour_UK.PNG}
-  \captionof{figure}{Repeatable eLoran accuracy contour in the UK and Europe area with 95\% accuracy \cite{SafarAIONS}.}
-  \label{fig:elorancontour}
-\end{minipage}%
-\begin{minipage}{.45\textwidth}
-  \centering
-  \includegraphics[height=0.7\linewidth]{Figures/ELORAN_blanking_percentage.PNG}
-  \captionof{figure}{Blanked Pulse percentage of Anthorn station in 91 km ionosphere height \cite{SafarAIONS}.}
-  \label{fig:eloranblanked}
-\end{minipage}
+\begin{center}
+%    
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[height=5.3cm]{Figures/ELORAN_maritime_contour_UK.PNG}
+  \end{subfigure}
+%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[height=5.3cm]{Figures/ELORAN_blanking_percentage.PNG}
+  \end{subfigure}
+%  
+  \caption{Repeatable eLoran accuracy contour in the UK and Europe area with 95\% accuracy (left) and Blanked Pulse percentage of Anthorn station in 91 km ionosphere height (right) \cite{SafarAIONS}.}
+    \label{fig:eloranblanked}
+\end{center}
 \end{figure}
 
 \subsubsection{Aircraft Navigation \& Backup to GNSS}
@@ -138,32 +134,22 @@ Horizontal Accuracy & Availability & integrity & Continuity \\ [0.5ex]
 
 \vspace{3mm}
 \begin{figure}[!ht]
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[height=0.7\linewidth]{Figures/ELORAN_hfield_conf.PNG}
-  \captionof{figure}{Dual loop configuration of H-Field antenna \cite{BartoneH-fieldApplications}.}
-  \label{fig:eloranhfieldconf}
-\end{minipage}%
-\begin{minipage}{0.5\textwidth}
-  \centering
-  \includegraphics[height=0.7\linewidth]{Figures/ELORAN_hfield__antenna_component.PNG}
-  \captionof{figure}{H-Field eLoran Antenna Component test configuration \cite{BartoneH-fieldApplications}.}
-  \label{fig:eloranhfieldantennacompconf}
-\end{minipage}
+\begin{center}
+%    
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[height=5cm]{Figures/ELORAN_hfield_conf.PNG}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[height=5cm]{Figures/ELORAN_hfield__antenna_component.PNG}
+  \end{subfigure}
+%  
+  \caption{Dual loop configuration of H-Field antenna (left) and H-Field eLoran Antenna Component test configuration (right) \cite{BartoneH-fieldApplications}.}
+    \label{fig:hloop antenna}
+\end{center}
 \end{figure}
 \vspace{3mm}
 
-
 \noindent In a recent development, the usage of H-field or magnetic loop antenna for eLoran has been demonstrated to fulfil the requirements for the purposes of Minimum Operation Performance Specification \cite{Anonymous2016ELoranLight}. The primary issue form the previous generation Loran-C and E-field antenna is the signal noise caused by the electrical potential from the airframe and its surroundings (particularly in snow and rain); this disruption is also known as P-Static \cite{BartoneH-fieldApplications}.\\
 
-\noindent Economically, eLoran system allows a potential to decrease land infrastructure, also enable Communication, Navigation, and Surveillance (CNS) function to transfer to digital communications \cite{InternationalLORANAssociation2007EnhancedApril}.
-
-
-
-
-
-
-
-
-
+\noindent Economically, eLoran system allows a potential to decrease land infrastructure, also enable Communication, Navigation, and Surveillance (CNS) function to transfer to digital communications \cite{InternationalLORANAssociation2007EnhancedApril}.\\
